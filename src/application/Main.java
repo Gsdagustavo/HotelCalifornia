@@ -17,7 +17,7 @@ public class Main {
         System.out.println("========== HOTEL CALIFORNIA ==========\n");
 
         while (!exit) {
-
+            System.out.print("\n==================");
             System.out.print("\n[1] Rent a room\n[2] Vacate a room\n[3] Show used rooms\n[4] Show available rooms\n[0] Exit\n--> ");
 
             try {
@@ -59,7 +59,7 @@ public class Main {
                         break;
                     case 2:
                         if (rooms.isEmpty()) {
-                            System.out.println("There are no used rooms.");
+                            System.out.println("\nThere are no used rooms.");
                         } else {
                             System.out.print("\nEnter room number to be vacated: ");
                             int roomNumber = 0;
@@ -82,7 +82,7 @@ public class Main {
                         showUsedRooms(rooms);
                         break;
                     case 4:
-                        showAvailableRooms(rooms, MAX_ROOMS);
+                        showAvailableRooms(rooms);
                         break;
                     case 0:
                         exit = true;
@@ -100,7 +100,7 @@ public class Main {
         sc.close();
     }
 
-    public static void showAvailableRooms(ArrayList<Room> roomArrayList, final int MAX_ROOMS) {
+    public static void showAvailableRooms(ArrayList<Room> roomArrayList) {
         ArrayList<Integer> availableRooms = new ArrayList<Integer>();
 
         for (int i = 1; i <= MAX_ROOMS; i++) {
